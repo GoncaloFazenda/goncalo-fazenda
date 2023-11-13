@@ -1,3 +1,8 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next", "next/core-web-vitals", "eslint:recommended"],
+  "globals": {
+    // React version 17 >= import Reacr from "react" wont be required.
+    // This disables eslint to say you are using a variable that isn't defined.
+    "React": "readonly"
+  }
 }
