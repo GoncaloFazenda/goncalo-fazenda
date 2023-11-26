@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/theme-provider';
-import { ModeToggle } from '@/components/ui/modeToggle';
+import Provider from './_trpc/Provider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -12,15 +12,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body style={{ display: 'flex', flexDirection: 'column' }}>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-          <ul style={{ background: 'yellow', padding: '22px', position: 'sticky' }}>
-            <li>sd</li>
-            <li>sd223</li>
-            <li>s2234d</li>
-            <ModeToggle />
-          </ul>
-          {children}
-        </ThemeProvider>
+        <Provider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+            {children}
+          </ThemeProvider>
+        </Provider>
       </body>
     </html>
   );

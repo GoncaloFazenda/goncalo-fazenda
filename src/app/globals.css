@@ -59,7 +59,4 @@
     min-height: 100vh;
     @apply bg-background text-foreground;
   }
-
-  html {
-  }
 }
