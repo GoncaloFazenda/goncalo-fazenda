@@ -1,5 +1,4 @@
 'use client';
-
 import { trpc } from '../_trpc/client';
 
 export default function FetchComponent() {

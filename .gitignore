@@ -5,6 +5,7 @@
 /.yarn
 .yarn.js
 .yarn/install-state.gz
+/.vscode
 
 # testing
 /coverage
