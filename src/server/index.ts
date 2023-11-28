@@ -24,7 +24,8 @@ const db = drizzle(queryClient, { schema });
 
 export const appRouter = router({
     getUsers: publicProcedure.query(async () => {
-        return await db.select().from(users);
+        // return await db.select().from(users);
+        return { message: 'working as intended' };
     }),
     addUser: publicProcedure.input(z.string()).mutation(async (params) => {
         const { input } = params;

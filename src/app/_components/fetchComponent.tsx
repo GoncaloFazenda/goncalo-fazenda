@@ -5,6 +5,7 @@ export default function FetchComponent() {
     const getMessage = trpc.getUsers.useQuery();
     const addUser = trpc.addUser.useMutation();
     //   console.log(getMessage.data);
+    getMessage.isError && console.log(getMessage.error);
     return (
         <div>
             <h1>Fetch Component</h1>
