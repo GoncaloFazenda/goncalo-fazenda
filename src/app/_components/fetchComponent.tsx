@@ -13,6 +13,7 @@ export default function FetchComponent() {
             <p>{JSON.stringify(getMessage.data)}</p>
             {getMessage.isError && <h1 className=" text-3xl text-red-500">{JSON.stringify(getMessage.error)}</h1>}
             <button onClick={() => addUser.mutate('fazenda')}>Add user</button>
+            <p>{JSON.stringify(addUser.data)}</p>
         </div>
     );
 }
