@@ -1,6 +1,4 @@
 import type { Config } from 'drizzle-kit';
-import dotenv from 'dotenv';
-dotenv.config();
 
 if (!process.env.DATABASE_HOST) {
     console.error('process.env.DATABASE_HOST not set');
@@ -12,7 +10,7 @@ if (!process.env.DATABASE_HOST) {
 
 export default {
     schema: './src/db/schema.ts',
-    out: './drizzle/migrations',
+    out: './drizzle',
     driver: 'pg', // 'pg' | 'mysql2' | 'better-sqlite' | 'libsql' | 'turso'
     dbCredentials: {
         host: process.env.DATABASE_HOST!,
