@@ -5,6 +5,12 @@ export const serverClient = appRouter.createCaller({
     links: [
         httpBatchLink({
             url: `${process.env.NEXT_PUBLIC_BASEURL}/api/trpc`,
+            fetch(url, options) {
+                return fetch(url, {
+                    ...options,
+                    credentials: 'include',
+                });
+            },
         }),
     ],
 });
