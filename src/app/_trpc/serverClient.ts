@@ -4,8 +4,7 @@ import { appRouter } from '@/server';
 export const serverClient = appRouter.createCaller({
     links: [
         httpBatchLink({
-            // url: `${process.env.NEXT_PUBLIC_BASEURL}/api/trpc`,
-            url: `https://www.goncalo-fazenda.vercel.app/api/trpc`,
+            url: `${process.env.NEXT_PUBLIC_BASEURL}/api/trpc`,
         }),
     ],
 });
