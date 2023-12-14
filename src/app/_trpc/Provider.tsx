@@ -10,13 +10,8 @@ export default function Provider({ children }: { children: React.ReactNode }) {
         trpc.createClient({
             links: [
                 httpBatchLink({
-                    url: `${process.env.NEXT_PUBLIC_BASEURL}/api/trpc`,
-                    fetch(url, options) {
-                        return fetch(url, {
-                            ...options,
-                            credentials: 'include',
-                        });
-                    },
+                    // url: `${process.env.NEXT_PUBLIC_BASEURL}/api/trpc`,
+                    url: `https://www.goncalo-fazenda.vercel.app/api/trpc`,
                 }),
             ],
         })
